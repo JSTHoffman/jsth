@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block head %}
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}">
+{% endblock %}
+
+{% block nav_menu_item_home %}active{% endblock %}
+{% block nav_menu_item_link_home %}active{% endblock %}
+
+{% block main_content %}
+  <h1>&lt<span> jaime hoffman </span>/&gt</h1>
+  <h4>Data Engineering / Data Science / Web Development / GIS / Cartography</h4>
+{% endblock %}

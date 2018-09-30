@@ -1,0 +1,16 @@
+.main-content {
+  text-align: left;
+}
+
+p {
+  width: 50%;
+  color: white;
+}
+
+.drop-cap:first-letter {
+  float: left;
+  font-size: 3em;
+  text-transform: capitalize;
+  margin: 0.08em 0.08em 0 0;
+  color: #CF6766;
+}

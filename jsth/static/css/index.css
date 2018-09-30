@@ -1,0 +1,15 @@
+.main-content h1 {
+  margin-bottom: 0.1em;
+  font-size: 5em;
+}
+
+.main-content h1 span {
+  font-style: italic;
+  text-transform: capitalize;
+  color: white;
+  text-shadow: 0.08em 0.08em #CF6766;
+}
+
+.main-content h4 {
+  font-weight: lighter;
+}

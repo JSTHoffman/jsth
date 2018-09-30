@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <!-- <meta name="viewport" content="width=device-width">
+    <meta name="viewport" content="initial-scale=1"> -->
+    <!-- <meta name="viewport" content="minimum-scale=1"> -->
+
+    <title>Jaime Hoffman{% block title %}{% endblock %}</title>
+
+    <!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.12/css/all.css" integrity="sha384-G0fIWCsCzJIMAVNQPfjH08cyYaUtMwjJwqiRKxxE/rx96Uroj1BtIQ6MLJuheaO9" crossorigin="anonymous"> -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/base.css') }}">
+    {% block head %}{% endblock %}
+  </head>
+
+  <body>
+    <div class="flex-wrapper">
+      <header>
+        <nav>
+          <ul class="nav-menu">
+            <li class="nav-menu-item {% block nav_menu_item_home %}{% endblock %}">
+              <a class="link {% block nav_menu_item_link_home %}{% endblock %}" href="{{ url_for('index') }}">home</a>
+            </li>
+            <li class="nav-menu-item {% block nav_menu_item_about %}{% endblock %}">
+              <a class="link {% block nav_menu_item_link_about %}{% endblock %}" href="{{ url_for('about') }}">about</a>
+            </li>
+          </ul>
+        </nav>
+      </header>
+
+      <div class="main-content">
+        {% block main_content %}{% endblock %}
+      </div>
+
+      <footer>
+        <ul>
+          <li class="footer-item"><span>&copy; 2018 Jaime Hoffman</span></li>
+        </ul>
+      </footer>
+    </div>
+  </body>
+</html>

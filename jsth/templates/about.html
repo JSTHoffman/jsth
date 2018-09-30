@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block head %}
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/about.css') }}">
+{% endblock %}
+
+{% block nav_menu_item_about %}active{% endblock %}
+{% block nav_menu_item_link_about %}active{% endblock %}
+
+{% block main_content %}
+  <p class="drop-cap">
+    This is some info about me. I had to add a lot of text
+    to get the paragraph to wrap so I could test the drop-cap.
+    I don't know if I like this layout or design yet. But I'm
+    working on it. Hopefully I'll figure it out soon. I do like
+    playing with different designs a lot though. I just need to
+    get better at making the decision to dive in and go with one.
+    <br>
+    <br>
+    I hope you like what you see.
+  </p>
+{% endblock %}
