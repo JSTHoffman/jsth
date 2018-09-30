@@ -1,16 +1,18 @@
-.main-content {
-  text-align: left;
+.drop-cap:first-letter {
+  float: left;
+  font-size: 4em;
+  font-weight: bold;
+  text-transform: capitalize;
+  margin: 0.1em 0.1em 0.1em 0;
+  color: #CF6766;
 }
 
 p {
   width: 50%;
+  text-align: justify;
   color: white;
 }
 
-.drop-cap:first-letter {
-  float: left;
-  font-size: 3em;
-  text-transform: capitalize;
-  margin: 0.08em 0.08em 0 0;
-  color: #CF6766;
+a {
+  color: white;
 }
