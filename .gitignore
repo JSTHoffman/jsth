@@ -1,0 +1,19 @@
+# VIRTUAL ENVIRONMENT
+venv/
+.env
+
+# COMPILED PROJECT FILES
+*.pyc
+__pycache__/
+
+# FLASK INSTANCE DIRECTORY CONTAINING
+# CREDENTIALS AND SENSITIVE CONFIG VALUES
+instance/
+
+# TESTING REPORTS
+.pytest_cache/
+.coverage
+htmlcov/
+
+# MACOS FILES
+.DS_Store
