@@ -16,13 +16,20 @@
   <body>
     <div class="flex-wrapper">
       <header>
+        <h1 class="header-name">jsth</h1>
         <nav>
           <ul class="nav-menu">
-            <li class="nav-menu-item {% block nav_menu_item_home %}{% endblock %}">
-              <a class="link {% block nav_menu_item_link_home %}{% endblock %}" href="{{ url_for('index') }}">home</a>
+            <li class="nav-menu-item {% block nav_menu_item_contact %}{% endblock %}">
+              <a class="link {% block nav_menu_item_link_contact %}{% endblock %}" href="{{ url_for('contact') }}">contact</a>
+            </li>
+            <li class="nav-menu-item {% block nav_menu_item_map %}{% endblock %}">
+              <a class="link {% block nav_menu_item_link_map %}{% endblock %}" href="{{ url_for('map') }}">map</a>
             </li>
             <li class="nav-menu-item {% block nav_menu_item_about %}{% endblock %}">
               <a class="link {% block nav_menu_item_link_about %}{% endblock %}" href="{{ url_for('about') }}">about</a>
+            </li>
+            <li class="nav-menu-item {% block nav_menu_item_home %}{% endblock %}">
+              <a class="link {% block nav_menu_item_link_home %}{% endblock %}" href="{{ url_for('index') }}">home</a>
             </li>
           </ul>
         </nav>
