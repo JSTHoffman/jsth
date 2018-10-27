@@ -26,6 +26,11 @@ html, body {
   color: #CF6766;
 }
 
+.placeholder {
+  font-size: 1.3em;
+  letter-spacing: 0.5em;
+}
+
 p {
   line-height: 150%;
 }
