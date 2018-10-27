@@ -24,9 +24,7 @@ header {
   height: auto;
   width: 100vw;
   top: 0;
-  /* background-image: linear-gradient(#E06F6F, #FF7F7E); */
   background-color: #FF7F7E;
-  /* box-shadow: 0 0.05em 1em 1em #FF7F7E; */
   box-shadow: 0 0 0.15em 0.15em #CF6766;
   border-bottom: 0.05em solid #CF6766;
 }
@@ -58,17 +56,14 @@ nav {
 .nav-menu-item {
   float: right;
   margin-left: 1em;
-  /* border-bottom: 0.5em solid #CF6766; */
 }
 
 .nav-menu-item:hover {
   border-bottom: 0.5em solid #CF6766;
-  /* border-bottom-color: white; */
 }
 
 .nav-menu-item.active {
   border-bottom: 0.5em solid white;
-  /* border-bottom-color: white; */
 }
 
 .nav-menu-item .link {
@@ -103,7 +98,6 @@ footer {
   justify-content: center;
   height: auto;
   color: #CF6766;
-  /* background-image: linear-gradient(#FF7F7E, #E06F6F); */
 }
 
 .footer-item {
