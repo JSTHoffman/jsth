@@ -19,10 +19,14 @@ def register_routes(app):
     def about():
         return render_template('about.html')
 
-    @app.route('/contact', methods=['GET'])
-    def contact():
-        return render_template('contact.html')
-
     @app.route('/map', methods=['GET'])
     def map():
         return render_template('map.html')
+
+    @app.route('/gallery', methods=['GET'])
+    def gallery():
+        return render_template('gallery.html')
+
+    @app.route('/contact', methods=['GET'])
+    def contact():
+        return render_template('contact.html')

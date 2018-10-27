@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block head %}
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/gallery.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/header.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/footer.css') }}">
+{% endblock %}
+
+{% block nav_menu_item_gallery %}active{% endblock %}
+{% block nav_menu_item_link_gallery %}active{% endblock %}
+
+{% block main_content %}
+  <span class="placeholder">Design gallery coming soon.</span>
+{% endblock %}
