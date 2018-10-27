@@ -10,6 +10,8 @@
 
     <!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.12/css/all.css" integrity="sha384-G0fIWCsCzJIMAVNQPfjH08cyYaUtMwjJwqiRKxxE/rx96Uroj1BtIQ6MLJuheaO9" crossorigin="anonymous"> -->
     <link rel="stylesheet" href="{{ url_for('static', filename='css/base.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/header.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/footer.css') }}">
     {% block head %}{% endblock %}
   </head>
 
@@ -21,6 +23,9 @@
           <ul class="nav-menu">
             <li class="nav-menu-item {% block nav_menu_item_contact %}{% endblock %}">
               <a class="link {% block nav_menu_item_link_contact %}{% endblock %}" href="{{ url_for('contact') }}">contact</a>
+            </li>
+            <li class="nav-menu-item {% block nav_menu_item_gallery %}{% endblock %}">
+              <a class="link {% block nav_menu_item_link_gallery %}{% endblock %}" href="{{ url_for('gallery') }}">gallery</a>
             </li>
             <li class="nav-menu-item {% block nav_menu_item_map %}{% endblock %}">
               <a class="link {% block nav_menu_item_link_map %}{% endblock %}" href="{{ url_for('map') }}">map</a>

@@ -1,0 +1,14 @@
+footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: auto;
+  color: #CF6766;
+}
+
+.footer-item {
+  display: inline;
+  margin: 2em;
+  font-size: 0.8em;
+  text-transform: uppercase;
+}
