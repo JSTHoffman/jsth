@@ -24,15 +24,21 @@ header {
   height: auto;
   width: 100vw;
   top: 0;
-  background-image: linear-gradient(#E06F6F, #FF7F7E);
-  /* background-color: #FF7F7E; */
-  box-shadow: 0 0.05em 1em 1em #FF7F7E;
+  /* background-image: linear-gradient(#E06F6F, #FF7F7E); */
+  background-color: #FF7F7E;
+  /* box-shadow: 0 0.05em 1em 1em #FF7F7E; */
+  box-shadow: 0 0 0.15em 0.15em #CF6766;
+  border-bottom: 0.05em solid #CF6766;
 }
 
 .header-name {
   margin: 0;
   padding-left: 5%;
   font-style: italic;
+}
+
+.header-name a {
+  text-decoration: none;
   color: #CF6766;
 }
 
@@ -97,7 +103,7 @@ footer {
   justify-content: center;
   height: auto;
   color: #CF6766;
-  background-image: linear-gradient(#FF7F7E, #E06F6F);
+  /* background-image: linear-gradient(#FF7F7E, #E06F6F); */
 }
 
 .footer-item {
