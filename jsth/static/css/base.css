@@ -2,7 +2,7 @@
 
 html, body {
   height: 100%;
-  min-width: 600px;
+  min-width: 850px;
   margin: 0;
   padding: 0;
   font-family: 'Montserrat', sans-serif;
@@ -22,7 +22,8 @@ header {
   position: fixed;
   overflow: hidden;
   height: auto;
-  width: 100vw;
+  width: 100%;
+  min-width: 850px;
   top: 0;
   background-color: #FF7F7E;
   box-shadow: 0 0 0.15em 0.15em #CF6766;
