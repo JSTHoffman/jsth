@@ -1,6 +1,7 @@
 {% extends "base.html" %}
 
 {% block head %}
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/gallery.css') }}">
   <link rel="stylesheet" href="{{ url_for('static', filename='css/header.css') }}">
   <link rel="stylesheet" href="{{ url_for('static', filename='css/footer.css') }}">
 {% endblock %}
@@ -9,5 +10,45 @@
 {% block nav_menu_item_link_gallery %}active{% endblock %}
 
 {% block main_content %}
-  <span class="placeholder">Design gallery coming soon.</span>
+  <div class="gallery-heading-wrapper">
+    <p>Some work I've done in GIS / cartography and graphic design over the years.</p>
+  </div>
+  <div class="gallery-wrapper">
+    <div class="gallery-item">
+      <img src="{{ url_for('static', filename='img/GeocachingLA.png') }}"></img>
+    </div>
+    <div class="gallery-item">
+      <img src="{{ url_for('static', filename='img/LADWPServiceMap_Color.png') }}"></img>
+    </div>
+    <div class="gallery-item">
+      <img src="{{ url_for('static', filename='img/CSUNSolarPoster_Full.png') }}"></img>
+    </div>
+    <!-- <div class="gallery-item">
+      <img src="{{ url_for('static', filename='img/DWPSchools.png') }}"></img>
+    </div> -->
+    <div class="gallery-item">
+      <img src="{{ url_for('static', filename='img/AutomobileMaintenance_CS5.png') }}"></img>
+    </div>
+    <div class="gallery-item">
+      <img src="{{ url_for('static', filename='img/OrangePickFlyer2015_SweetSunday.png') }}"></img>
+    </div>
+    <div class="gallery-item">
+      <img src="{{ url_for('static', filename='img/SustDay2016.png') }}"></img>
+    </div>
+    <div class="gallery-item">
+      <img src="{{ url_for('static', filename='img/SustDay2016_4pm_session.png') }}"></img>
+    </div>
+    <div class="gallery-item">
+      <img src="{{ url_for('static', filename='img/VGATreePlantingSign_Landscape.png') }}"></img>
+    </div>
+    <div class="gallery-item">
+      <img src="{{ url_for('static', filename='img/ToteBag Graphic_3.png') }}"></img>
+    </div>
+    <!-- <div class="gallery-item">
+      <img src="{{ url_for('static', filename='img/GeocachingLA.png') }}"></img>
+    </div>
+    <div class="gallery-item">
+      <img src="{{ url_for('static', filename='img/GeocachingLA.png') }}"></img>
+    </div> -->
+  </div>
 {% endblock %}
