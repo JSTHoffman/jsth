@@ -6,6 +6,10 @@ footer {
   color: #CF6766;
 }
 
+footer ul {
+  list-style-type: none;
+}
+
 .footer-item {
   display: inline;
   margin: 2em;
