@@ -8,7 +8,7 @@ __pycache__/
 
 # FLASK INSTANCE DIRECTORY CONTAINING
 # CREDENTIALS AND SENSITIVE CONFIG VALUES
-instance/
+instance/*
 
 # TESTING REPORTS
 .pytest_cache/
@@ -17,3 +17,6 @@ htmlcov/
 
 # MACOS FILES
 .DS_Store
+
+# VSCODE SETTINGS
+.vscode/
