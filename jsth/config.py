@@ -15,6 +15,8 @@ class Config(object):
     CSRF_ENABLED = True
     SECRET_KEY = os.getenv('SECRET_KEY')
 
+    DATABASE = 'jsth.sqlite'
+
 
 class TestingConfig(Config):
     '''
@@ -35,6 +37,7 @@ class ProductionConfig(DevelopmentConfig):
     Settings for production are inherited from the development config.
     '''
     DEBUG = False
+
 
 app_config = {
     'local': Config,

@@ -5,18 +5,14 @@ the application configured for the environment in which it will run.
 For more information see http://flask.pocoo.org/docs/dev/tutorial/factory/
 '''
 
-import json
+
 import os
 
-from flask import (
-    Flask,
-    jsonify,
-    make_response,
-    request
-)
+from flask import Flask
 
 from jsth import config
-from jsth import routes
+from jsth.db import init_db
+from jsth.routes import register_routes
 
 
 def create_app():
@@ -29,19 +25,20 @@ def create_app():
     # CONFIG FILES LOCATED IN THE INSTANCE DIRECTORY
     app = Flask(__name__, instance_relative_config=True)
 
-    # LOAD DEFAULT CONFIGURATION
-    app.config.from_object(config.app_config[env])
+    with app.app_context():
+        # LOAD DEFAULT CONFIGURATION
+        app.config.from_object(config.app_config[env])
 
-    # REGISTER APP LEVEL ROUTES
-    routes.register_routes(app)
+        # REGISTER APP LEVEL ROUTES
+        register_routes(app)
 
-    # REGISTER BLUEPRINTS
-    # app.register_blueprint()
+        # REGISTER BLUEPRINTS
+        # app.register_blueprint()
 
-    # REGISTER DATABASE COMMANDS
-    # db.init_app(app)
+        # INITIALIZE DATABASE
+        init_db(app)
 
-    # REGISTER CUSTOM CLI COMMANDS
-    # app.cli.add_command(user_cli)
+        # REGISTER CUSTOM CLI COMMANDS
+        # app.cli.add_command(user_cli)
 
     return app

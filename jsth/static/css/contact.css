@@ -1,4 +1,8 @@
-.email {
-  font-size: 1.3em;
-  letter-spacing: 0.5em;
+a {
+  color: gainsboro;
+}
+
+a:hover {
+  color: gainsboro;
+  text-decoration: underline;
 }

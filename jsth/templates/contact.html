@@ -2,13 +2,13 @@
 
 {% block head %}
   <link rel="stylesheet" href="{{ url_for('static', filename='css/contact.css') }}">
-  <link rel="stylesheet" href="{{ url_for('static', filename='css/header.css') }}">
-  <link rel="stylesheet" href="{{ url_for('static', filename='css/footer.css') }}">
 {% endblock %}
 
 {% block nav_menu_item_contact %}active{% endblock %}
 {% block nav_menu_item_link_contact %}active{% endblock %}
 
 {% block main_content %}
-  <span class="email">jsthoffman90@gmail.com</span>
+  <div class="container-fluid d-flex justify-content-center align-items-center h-100">
+      <a href="mailto:jsthoffman90@gmail.com"><span class="lead">jsthoffman90@gmail.com</span></a>
+  </div>
 {% endblock %}

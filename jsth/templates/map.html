@@ -1,13 +1,10 @@
 {% extends "base.html" %}
 
-{% block head %}
-  <link rel="stylesheet" href="{{ url_for('static', filename='css/header.css') }}">
-  <link rel="stylesheet" href="{{ url_for('static', filename='css/footer.css') }}">
-{% endblock %}
-
 {% block nav_menu_item_map %}active{% endblock %}
 {% block nav_menu_item_link_map %}active{% endblock %}
 
 {% block main_content %}
-  <span class="placeholder">Interactive map coming soon.</span>
+  <div class="container-fluid d-flex justify-content-center align-items-center h-100">
+    <span class="lead">Interactive map coming soon.</span>
+  </div>
 {% endblock %}

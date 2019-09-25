@@ -1,36 +1,59 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat:400,400i,700,700i');
 
-html, body {
-  height: 100%;
-  min-width: 850px;
-  margin: 0;
-  padding: 0;
+body {
+  color: gainsboro;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
   font-family: 'Montserrat', sans-serif;
-  background-color: #FF7F7E /* #F4F5F5 */;
+
 }
 
-.flex-wrapper {
-  display: flex;
-  min-height: 100%;
-  flex-direction: column;
+a {
+  color: lightsteelblue;
 }
 
-.main-content {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  margin-top: 3em;
-  color: #CF6766;
+a:hover {
+  color: lightsteelblue;
 }
 
-.placeholder {
-  font-size: 1.3em;
-  letter-spacing: 0.5em;
+.navbar-brand {
+  text-shadow: 0.1em 0.1em 0.1em #292E33;
+  font-style: italic;
+  font-weight: bold;
+  text-transform: uppercase;
 }
 
-p {
-  line-height: 150%;
+.nav-item a {
+  text-transform: capitalize;
+}
+
+/* .nav-label {
+  display: none;
+} */
+
+/* .nav-item.active .nav-label {
+  display: inline;
+} */
+
+/* .nav-item:hover .nav-label {
+  display: inline;
+  transition: display 0.5s, opacity 0.5s linear;
+} */
+
+main {
+  flex: 1 0 auto;
+}
+
+footer a {
+  color: gainsboro;
+}
+
+footer a:hover {
+  color: gainsboro;
+  text-decoration: none;
+}
+
+footer a img {
+  height: 2em;
 }

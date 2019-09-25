@@ -2,14 +2,129 @@
 
 {% block head %}
   <link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}">
-  <link rel="stylesheet" href="{{ url_for('static', filename='css/header.css') }}">
-  <link rel="stylesheet" href="{{ url_for('static', filename='css/footer.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/gallery.css') }}">
 {% endblock %}
 
 {% block nav_menu_item_home %}active{% endblock %}
 {% block nav_menu_item_link_home %}active{% endblock %}
 
 {% block main_content %}
-  <h1>&lt<span> jaime hoffman </span>/&gt</h1>
-  <h4>Data Engineering / Data Science / Web Development / GIS / Cartography</h4>
+  <div class="container-fluid h-100">
+    <div class="row justify-content-center align-items-center">
+      <div class="col-xs-12 p-5">
+        <div class="row justify-content-center align-items-center">
+          <div class="col-xs-12">
+            <h1><nobr><strong>&lt<span class="font-italic text-capitalized"> jaime hoffman </span>/&gt</strong></nobr></h1>
+          </div>
+        </div>
+        <div class="row justify-content-center align-items-center">
+          <h4>Data Science / Data Engineering / GIS / Cartography / Web Development</h4>
+        </div>
+      </div>
+    </div>
+    <div id="carouselIndicators" class="carousel slide w-100 d-flex" data-ride="carousel">
+      <ol class="carousel-indicators">
+        <li data-target="#carouselIndicators" data-slide-to="0" class="active"></li>
+        <li data-target="#carouselIndicators" data-slide-to="1"></li>
+        <li data-target="#carouselIndicators" data-slide-to="2"></li>
+        <li data-target="#carouselIndicators" data-slide-to="3"></li>
+        <li data-target="#carouselIndicators" data-slide-to="4"></li>
+        <li data-target="#carouselIndicators" data-slide-to="5"></li>
+        <li data-target="#carouselIndicators" data-slide-to="6"></li>
+        <li data-target="#carouselIndicators" data-slide-to="7"></li>
+        <li data-target="#carouselIndicators" data-slide-to="8"></li>
+        <li data-target="#carouselIndicators" data-slide-to="9"></li>
+        <li data-target="#carouselIndicators" data-slide-to="10"></li>
+        <li data-target="#carouselIndicators" data-slide-to="11"></li>
+        <li data-target="#carouselIndicators" data-slide-to="12"></li>
+        <li data-target="#carouselIndicators" data-slide-to="13"></li>
+        <li data-target="#carouselIndicators" data-slide-to="14"></li>
+      </ol>
+      <div class="carousel-inner d-flex align-self-center p-3 mb-3">
+        <div class="carousel-item active">
+          <a href="{{ url_for('static', filename='img/LADWPServiceMap_Color.png') }}">
+            <img class="shadow mb-3" src="{{ url_for('static', filename='img/LADWPServiceMap_Color.png') }}"></img>
+          </a>
+        </div>
+        <div class="carousel-item">
+          <a href="{{ url_for('static', filename='img/GeocachingLA.png') }}">
+            <img class="shadow mb-3" src="{{ url_for('static', filename='img/GeocachingLA.png') }}"></img>
+          </a>
+        </div>
+        <div class="carousel-item">
+          <a href="{{ url_for('static', filename='img/CSUNSolarPoster_Full.png') }}">
+            <img class="shadow mb-3" src="{{ url_for('static', filename='img/CSUNSolarPoster_Full.png') }}"></img>
+          </a>
+        </div>
+        <div class="carousel-item">
+          <a href="{{ url_for('static', filename='img/climate_change_vulnerability/OverallVulnerability.png') }}">
+            <img class="shadow mb-3" src="{{ url_for('static', filename='img/climate_change_vulnerability/OverallVulnerability.png') }}"></img>
+          </a>
+        </div>
+        <div class="carousel-item">
+          <a href="{{ url_for('static', filename='img/climate_change_vulnerability/HeatVulnerability.png') }}">
+            <img class="shadow mb-3" src="{{ url_for('static', filename='img/climate_change_vulnerability/HeatVulnerability.png') }}"></img>
+          </a>
+        </div>
+        <div class="carousel-item">
+          <a href="{{ url_for('static', filename='img/climate_change_vulnerability/NoAC.png') }}">
+            <img class="shadow mb-3" src="{{ url_for('static', filename='img/climate_change_vulnerability/NoAC.png') }}"></img>
+          </a>
+        </div>
+        <div class="carousel-item">
+          <a href="{{ url_for('static', filename='img/climate_change_vulnerability/AloneOver65.png') }}">
+            <img class="shadow mb-3" src="{{ url_for('static', filename='img/climate_change_vulnerability/AloneOver65.png') }}"></img>
+          </a>
+        </div>
+        <div class="carousel-item">
+          <a href="{{ url_for('static', filename='img/climate_change_vulnerability/OutdoorWorkers.png') }}">
+            <img class="shadow mb-3" src="{{ url_for('static', filename='img/climate_change_vulnerability/OutdoorWorkers.png') }}"></img>
+          </a>
+        </div>
+        <div class="carousel-item">
+          <a href="{{ url_for('static', filename='img/climate_change_vulnerability/ImperviousCover.png') }}">
+            <img class="shadow mb-3" src="{{ url_for('static', filename='img/climate_change_vulnerability/ImperviousCover.png') }}"></img>
+          </a>
+        </div>
+        <div class="carousel-item">
+          <a href="{{ url_for('static', filename='img/AutomobileMaintenance_CS5.png') }}">
+            <img class="shadow mb-3" src="{{ url_for('static', filename='img/AutomobileMaintenance_CS5.png') }}"></img>
+          </a>
+        </div>
+        <div class="carousel-item">
+          <a href="{{ url_for('static', filename='img/OrangePickFlyer2015_SweetSunday.png') }}">
+            <img class="shadow mb-3" src="{{ url_for('static', filename='img/OrangePickFlyer2015_SweetSunday.png') }}"></img>
+          </a>
+        </div>
+        <div class="carousel-item">
+          <a href="{{ url_for('static', filename='img/SustDay2016.png') }}">
+            <img class="shadow mb-3" src="{{ url_for('static', filename='img/SustDay2016.png') }}"></img>
+          </a>
+        </div>
+        <div class="carousel-item">
+          <a href="{{ url_for('static', filename='img/SustDay2016_4pm_Session.png') }}">
+            <img class="shadow mb-3" src="{{ url_for('static', filename='img/SustDay2016_4pm_Session.png') }}"></img>
+          </a>
+        </div>
+        <div class="carousel-item">
+          <a href="{{ url_for('static', filename='img/VGATreePlantingSign_Landscape.png') }}">
+            <img class="shadow mb-3" src="{{ url_for('static', filename='img/VGATreePlantingSign_Landscape.png') }}"></img>
+          </a>
+        </div>
+        <div class="carousel-item">
+          <a href="{{ url_for('static', filename='img/ToteBag Graphic_3.png') }}">
+            <img class="shadow mb-3" src="{{ url_for('static', filename='img/ToteBag Graphic_3.png') }}"></img>
+          </a>
+        </div>
+      </div>
+      <a class="carousel-control-prev" href="#carouselIndicators" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="carousel-control-next" href="#carouselIndicators" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
+    </div>
+  </div>
 {% endblock %}
