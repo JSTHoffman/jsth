@@ -1,10 +1,22 @@
 {% extends "base.html" %}
 
+{% block head %}
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css" integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ==" crossorigin=""/>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/map.css') }}">
+  <script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js" integrity="sha512-GffPMF3RvMeYyc1LWMHtK8EbPv0iNZ8/oTtHPx9/cc2ILxQ+u905qIwdpULaqDkyBKgOaB57QTMg7ztg8Jm2Og==" crossorigin=""></script>
+{% endblock %}
+
 {% block nav_menu_item_map %}active{% endblock %}
 {% block nav_menu_item_link_map %}active{% endblock %}
 
 {% block main_content %}
   <div class="container-fluid d-flex justify-content-center align-items-center h-100">
-    <span class="lead">Interactive map coming soon.</span>
+    <div class="row h-100 w-100">
+      <div id='map' class="h-100 w-100 shadow"></div>
+    </div>
   </div>
+{% endblock %}
+
+{% block footer_scripts %}
+  <script src="{{ url_for('static', filename='js/map.js') }}"></script>
 {% endblock %}
