@@ -1,14 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat:400,400i,700,700i');
 
-html, body {
-  height: 100%;
-}
-
 body {
   color: gainsboro;
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
   font-family: 'Montserrat', sans-serif;
 }
 
@@ -21,31 +14,16 @@ a:hover {
 }
 
 .navbar-brand {
+  color: gainsboro !important;
   text-shadow: 0.1em 0.1em 0.1em #292E33;
-  font-style: italic;
-  font-weight: bold;
-  text-transform: uppercase;
 }
 
 .nav-item a {
   text-transform: capitalize;
 }
 
-/* .nav-label {
-  display: none;
-} */
-
-/* .nav-item.active .nav-label {
-  display: inline;
-} */
-
-/* .nav-item:hover .nav-label {
-  display: inline;
-  transition: display 0.5s, opacity 0.5s linear;
-} */
-
-main {
-  flex: 1 0 auto;
+header {
+  background-color: #414852; /* #4B535E */;
 }
 
 footer a {
