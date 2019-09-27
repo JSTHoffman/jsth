@@ -12,11 +12,14 @@
     </script>
 
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Personal website of Jaime Hoffman">
+    <meta name="kewords" content="Data Science, Data Engineering, GIS, Cartography, Maps">
+    <meta name="author" content="Jaime Hoffman">
     <title>Jaime Hoffman{% block title %}{% endblock %}</title>
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <script src="https://kit.fontawesome.com/516be5bd66.js" crossorigin="anonymous"></script>
-
     <link rel="stylesheet" href="{{ url_for('static', filename='css/base.css') }}">
 
     {% block head %}{% endblock %}
@@ -79,8 +82,8 @@
     </main>
 
     <footer>
-      <div class="container-fluid">
-        <div class="row justify-content-center aling-items-center">
+      <div class="container-fluid py-2">
+        <div class="row justify-content-center">
           <div class="col-xs-1">
             <a target="_blank" href="https://devcenter.heroku.com/">
               <small class="pl-2">Hosted by</small>
