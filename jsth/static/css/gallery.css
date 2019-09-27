@@ -1,5 +1,10 @@
+.carousel {
+    height: 65vh;
+}
+
 .carousel-item.active,
 .carousel-item-next,
+.carousel-item-prev,
 .carousel-item-right,
 .carousel-item-left {
     display: flex;
@@ -7,8 +12,9 @@
     align-self: center;
 }
 
-.carousel-item img {
-    max-height: 70vh;
-    max-width: 90vw;
+.carousel-item a img {
+    max-height: 60vh;
+    max-width: 75vw;
     width: auto;
+    margin-bottom: 0 !important;
 }
