@@ -20,7 +20,7 @@ def register_routes(app):
         return render_template('about.html')
 
     @app.route('/map', methods=['GET'])
-    def map():
+    def webmap():
         return render_template('map.html')
 
     @app.route('/gallery', methods=['GET'])
