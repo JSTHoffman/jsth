@@ -1,5 +1,5 @@
 .carousel {
-    height: 65vh;
+    min-height: 65vh;
 }
 
 .carousel-item.active,
