@@ -1,5 +1,21 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat:400,400i,700,700i');
 
+/* RESPONSIVE HEADER FONT SIZES */
+@media (min-width: 0px) {
+  header h1 {font-size: 1.5em;}
+  header p {font-size: 0.8em;}
+}
+
+@media (min-width: 576px) {
+  header h1 {font-size: 2em;}
+  header p {font-size: .9em;}
+}
+
+@media (min-width: 768px) {
+  header h1 {font-size: 2.5em;}
+  header p {font-size: 1em;}
+}
+
 body {
   color: gainsboro;
   font-family: 'Montserrat', sans-serif;
@@ -23,7 +39,7 @@ a:hover {
 }
 
 header {
-  background-color: #414852; /* #4B535E */;
+  background-color: #414852;
 }
 
 footer a {

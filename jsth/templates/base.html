@@ -73,8 +73,22 @@
       </div>
     </nav>
 
-    <header>
-      {% block header_content %}{% endblock %}
+
+    <header class="shadow mb-3">
+      <div class="container">
+        <div class="row flex-column">
+          <div class="col-auto">
+            <h1 class="display-5 mb-0 font-italic text-uppercase">
+              {% block header_title %}{% endblock %}
+            </h1>
+          </div>
+          <div class="col-12 col-md-6 col-lg-5">
+            <p class="mb-2">
+              {% block header_subtitle %}{% endblock %}
+            </p>
+          </div>
+        </div>
+      </div>
     </header>
 
     <main class="d-flex flex-grow-1">

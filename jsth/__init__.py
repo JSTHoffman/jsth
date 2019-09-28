@@ -11,6 +11,7 @@ import os
 from flask import Flask
 
 from jsth import config
+from jsth.api import api
 # from jsth.db import init_db
 from jsth.routes import register_routes
 
@@ -33,7 +34,7 @@ def create_app():
         register_routes(app)
 
         # REGISTER BLUEPRINTS
-        # app.register_blueprint()
+        app.register_blueprint(api)
 
         # INITIALIZE DATABASE
         # init_db(app)
