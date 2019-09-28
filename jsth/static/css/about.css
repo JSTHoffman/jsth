@@ -1,7 +1,7 @@
-.drop-cap:first-letter {
+.drop-cap:first-child:first-letter {
   float: left;
-  font-size: 4.8em;
+  font-size: 300%;
   font-weight: bold;
-  text-transform: capitalize;
   padding: 0.1em 0.1em 0.1em 0;
+  line-height: 0.8em;
 }

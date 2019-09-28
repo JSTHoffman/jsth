@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html class="h-100 min-vh-100" lang="en">
   <head>
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-129158662-1"></script>
@@ -12,19 +12,22 @@
     </script>
 
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Personal website of Jaime Hoffman">
+    <meta name="kewords" content="Data Science, Data Engineering, GIS, Cartography, Maps">
+    <meta name="author" content="Jaime Hoffman">
     <title>Jaime Hoffman{% block title %}{% endblock %}</title>
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <script src="https://kit.fontawesome.com/516be5bd66.js" crossorigin="anonymous"></script>
-
     <link rel="stylesheet" href="{{ url_for('static', filename='css/base.css') }}">
 
     {% block head %}{% endblock %}
   </head>
 
-  <body class="bg-dark">
+  <body class="bg-dark d-flex flex-column h-100">
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-      <a class="navbar-brand" href="{{ url_for('index') }}">jsth</a>
+      <a class="navbar-brand text-uppercase font-italic font-weight-bold" href="{{ url_for('index') }}">jsth</a>
       <button class="navbar-toggler navbar-dark border-0" type="button" data-toggle="collapse" data-target="#nav-content" aria-controls="nav-content" aria-expanded="false" aria-label="Toggle navigation menu">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -49,7 +52,7 @@
             </a>
           </li>
           <li class="nav-item {% block nav_menu_item_map %}{% endblock %}">
-            <a class="nav-link {% block nav_menu_item_link_map %}{% endblock %}" href="{{ url_for('map') }}">
+            <a class="nav-link {% block nav_menu_item_link_map %}{% endblock %}" href="{{ url_for('webmap') }}">
               <i class="fas fa-map"></i>
               <span class="nav-label">map</span>
             </a>
@@ -74,13 +77,13 @@
       {% block header_content %}{% endblock %}
     </header>
 
-    <main>
+    <main class="d-flex flex-grow-1">
       {% block main_content %}{% endblock %}
     </main>
 
     <footer>
-      <div class="container-fluid">
-        <div class="row justify-content-center aling-items-center">
+      <div class="container-fluid py-2">
+        <div class="row justify-content-center">
           <div class="col-xs-1">
             <a target="_blank" href="https://devcenter.heroku.com/">
               <small class="pl-2">Hosted by</small>
@@ -94,7 +97,7 @@
       </div>
 
       <!-- JQuery, Popper.js, Bootstrap, and leaflet plugins -->
-      <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+      <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
       <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
