@@ -4,8 +4,18 @@
   <link rel="stylesheet" href="{{ url_for('static', filename='css/contact.css') }}">
 {% endblock %}
 
+{% block title %} - Contact{% endblock %}
+
 {% block nav_menu_item_contact %}active{% endblock %}
 {% block nav_menu_item_link_contact %}active{% endblock %}
+
+{% block header_title %}
+  Contact
+{% endblock %}
+{% block header_subtitle%}
+  Shoot me an email with any questions, comments, advice, etc.
+  I'll get back to you as soon as I can.
+{% endblock %}
 
 {% block main_content %}
   <div class="container-fluid d-flex justify-content-center align-items-center h-100">
