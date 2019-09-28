@@ -2,8 +2,11 @@
 
 {% block head %}
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css" integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ==" crossorigin=""/>
+  <link href='https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/leaflet.fullscreen.css' rel='stylesheet' />
   <link rel="stylesheet" href="{{ url_for('static', filename='css/map.css') }}">
+
   <script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js" integrity="sha512-GffPMF3RvMeYyc1LWMHtK8EbPv0iNZ8/oTtHPx9/cc2ILxQ+u905qIwdpULaqDkyBKgOaB57QTMg7ztg8Jm2Og==" crossorigin=""></script>
+  <script src='https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/Leaflet.fullscreen.min.js'></script>
 {% endblock %}
 
 {% block title %} - Hiking Santa Barbara{% endblock %}
@@ -11,11 +14,18 @@
 {% block nav_menu_item_map %}active{% endblock %}
 {% block nav_menu_item_link_map %}active{% endblock %}
 
+{% block header_title %}
+  Hiking Santa Barbara
+{% endblock %}
+{% block header_subtitle%}
+  This web map shows some hiking trails in the Santa Barbara area (and some
+  other places) that I mapped using a handheld GPS unit. More data coming
+  as soon as I get outside more.
+{% endblock %}
+
 {% block main_content %}
-  <div class="container-fluid d-flex justify-content-center align-items-center h-100">
-    <div class="row h-100 w-100">
-      <div id='map' class="h-100 w-100 shadow"></div>
-    </div>
+  <div class="container-fluid h-100">
+    <div id="map" class="h-100"></div>
   </div>
 {% endblock %}
 
