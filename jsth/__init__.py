@@ -9,6 +9,7 @@ For more information see http://flask.pocoo.org/docs/dev/tutorial/factory/
 import os
 
 from flask import Flask
+from flask_talisman import Talisman
 
 from jsth import config
 from jsth.api import api
@@ -29,6 +30,9 @@ def create_app():
     with app.app_context():
         # LOAD DEFAULT CONFIGURATION
         app.config.from_object(config.app_config[env])
+
+        # USE CONTENT SECURITY POLICY USING TALISMAN
+        Talisman(app, content_security_policy=app.config['CSP'])
 
         # REGISTER APP LEVEL ROUTES
         register_routes(app)
