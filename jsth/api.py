@@ -17,10 +17,10 @@ from flask import (
 api = Blueprint('api', __name__, url_prefix='/api')
 
 
-@api.route('/load-geojson/<filename>', methods=['GET'])
+@api.route('/get-geojson/<filename>', methods=['GET'])
 def load_geojson(filename):
     '''
-    Loads the requested geojson file from the
+    Gets the requested geojson file from the
     static directory and returns its contents.
     '''
     try:

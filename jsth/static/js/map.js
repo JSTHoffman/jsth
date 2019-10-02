@@ -29,12 +29,7 @@ function initMap(tileUrl, mapCenter, attribution, accessToken) {
         accessToken: accessToken
     });
 
-    // CREATE THE MAP
-    var map = L.map('map', {
-        center: mapCenter,
-        zoom: 12,
-        layers: outdoors,
-        fullscreenControl: true
+        url: 'api/get-geojson/' + fileName,
     });
 
     // CREATE THE LAYERS CONTROL
