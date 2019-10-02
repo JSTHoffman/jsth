@@ -27,64 +27,66 @@
   </head>
 
   <body class="bg-dark d-flex flex-column h-100">
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-      <a class="navbar-brand text-uppercase font-italic font-weight-bold" href="{{ url_for('index') }}">jsth</a>
-      <button class="navbar-toggler navbar-dark border-0" type="button" data-toggle="collapse" data-target="#nav-content" aria-controls="nav-content" aria-expanded="false" aria-label="Toggle navigation menu">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse justify-content-end" id="nav-content">
-        <ul class="navbar-nav align-items-center">
-          <li class="nav-item {% block nav_menu_item_home %}{% endblock %}">
-            <a class="nav-link {% block nav_menu_item_link_home %}{% endblock %}" href="{{ url_for('index') }}">
-              <i class="fas fa-home"></i>
-              <span class="nav-label">home</span>
-            </a>
-          </li>
-          <li class="nav-item {% block nav_menu_item_about %}{% endblock %}">
-            <a class="nav-link {% block nav_menu_item_link_about %}{% endblock %}" href="{{ url_for('about') }}">
-              <i class="fas fa-info-circle"></i>
-              <span class="nav-label">about</span>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" target="_blank" href="http://scholarworks.csun.edu/handle/10211.3/189150">
-              <i class="fas fa-graduation-cap"></i>
-              <span class="nav-label">thesis</span>
-            </a>
-          </li>
-          <li class="nav-item {% block nav_menu_item_map %}{% endblock %}">
-            <a class="nav-link {% block nav_menu_item_link_map %}{% endblock %}" href="{{ url_for('webmap') }}">
-              <i class="fas fa-map"></i>
-              <span class="nav-label">map</span>
-            </a>
-          </li>
-          <!--<li class="nav-item {% block nav_menu_item_gallery %}{% endblock %}">
-            <a class="nav-link {% block nav_menu_item_link_gallery %}{% endblock %}" href="{{ url_for('gallery') }}">
-              <i class="fas fa-images"></i>
-              <span class="nav-label">gallery</span>
-            </a>
-          </li>-->
-          <li class="nav-item {% block nav_menu_item_contact %}{% endblock %}">
-            <a class="nav-link {% block nav_menu_item_link_contact %}{% endblock %}" href="{{ url_for('contact') }}">
-              <i class="fas fa-envelope"></i>
-              <span class="nav-label">contact</span>
-            </a>
-          </li>
-        </ul>
-      </div>
-    </nav>
+    <div class="container">
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark px-0">
+        <a class="navbar-brand text-uppercase font-italic font-weight-bold" href="{{ url_for('index') }}">jsth</a>
+        <button class="navbar-toggler navbar-dark border-0" type="button" data-toggle="collapse" data-target="#nav-content" aria-controls="nav-content" aria-expanded="false" aria-label="Toggle navigation menu">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end" id="nav-content">
+          <ul class="navbar-nav align-items-center">
+            <li class="nav-item {% block nav_menu_item_home %}{% endblock %}">
+              <a class="nav-link {% block nav_menu_item_link_home %}{% endblock %}" href="{{ url_for('index') }}">
+                <i class="fas fa-home"></i>
+                <span class="nav-label">home</span>
+              </a>
+            </li>
+            <li class="nav-item {% block nav_menu_item_about %}{% endblock %}">
+              <a class="nav-link {% block nav_menu_item_link_about %}{% endblock %}" href="{{ url_for('about') }}">
+                <i class="fas fa-info-circle"></i>
+                <span class="nav-label">about</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" target="_blank" href="http://scholarworks.csun.edu/handle/10211.3/189150">
+                <i class="fas fa-graduation-cap"></i>
+                <span class="nav-label">thesis</span>
+              </a>
+            </li>
+            <li class="nav-item {% block nav_menu_item_map %}{% endblock %}">
+              <a class="nav-link {% block nav_menu_item_link_map %}{% endblock %}" href="{{ url_for('webmap') }}">
+                <i class="fas fa-map"></i>
+                <span class="nav-label">map</span>
+              </a>
+            </li>
+            <!--<li class="nav-item {% block nav_menu_item_gallery %}{% endblock %}">
+              <a class="nav-link {% block nav_menu_item_link_gallery %}{% endblock %}" href="{{ url_for('gallery') }}">
+                <i class="fas fa-images"></i>
+                <span class="nav-label">gallery</span>
+              </a>
+            </li>-->
+            <li class="nav-item {% block nav_menu_item_contact %}{% endblock %}">
+              <a class="nav-link {% block nav_menu_item_link_contact %}{% endblock %}" href="{{ url_for('contact') }}">
+                <i class="fas fa-envelope"></i>
+                <span class="nav-label">contact</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </div>
 
 
-    <header class="shadow mb-3">
-      <div class="container">
+    <header class="shadow mb-3 py-2">
+      <div class="container header-container">
         <div class="row flex-column">
           <div class="col-auto">
-            <h1 class="display-5 mb-0 font-italic text-uppercase">
+            <h1 class="display-5 mb-0 font-italic text-uppercase header-title">
               {% block header_title %}{% endblock %}
             </h1>
           </div>
-          <div class="col-12 col-md-6 col-lg-5">
-            <p class="mb-2">
+          <div class="col-12 col-md-8 col-lg-6 header-subtitle-container">
+            <p class="mb-1 header-subtitle">
               {% block header_subtitle %}{% endblock %}
             </p>
           </div>
