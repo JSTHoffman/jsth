@@ -1,5 +1,7 @@
 'use strict';
 
+import { createAlert } from './base.js';
+
 // GEOJSON TRAIL FILES
 const trailsFile = 'hiked_trails.geojson';
 
@@ -103,6 +105,7 @@ function loadGeoJSONLayer(fileName, layerName, options = {}) {
         },
         error: function (response) {
             console.log('Error loading geojson file: ' + response.responseText);
+            createAlert('Error loading geojson file: ' + fileName, 'danger');
         }
     });
 }
@@ -189,7 +192,7 @@ function loadTrailheads() {
 }
 
 /*
- * EXECUTED ON THE MAPS MOVEEND EVENT
+ * EXECUTED ON THE MAP'S MOVEEND EVENT
 */
 function onMoveEnd() {
     // LOAD MORE TRAILHEADS
@@ -238,7 +241,7 @@ $(document).ready(function () {
         icon: 'fas fa-crosshairs'
     }).addTo(map);
 
-    // ADD A FULLSCREEN CONTROL
+    // ADD A FULLSCREEN CONTROL TO THE MAP
     map.addControl(new L.Control.Fullscreen({
         position: 'topright'
     }));
