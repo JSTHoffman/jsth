@@ -9,12 +9,27 @@ export function createAlert(message, category) {
                 '    </button>' +
                 '</div>';
 
-    $(markup).appendTo(alertRow).on('click', function () { this.remove(); });
+    $(markup).appendTo(alertRow).on('click touch', function () {
+        this.remove();
+    });
 }
 
 $(document).ready(function () {
+    // EVENT LISTENER TO CLOSE THE NAV
+    // MENU ON CLICKS OUTSIDE THE NAV
+    $(document).on('click touch', function (event) {
+        var target = $(event.target);
+        if (target.parents('.navbar-collapse').length < 1) {
+            var navbar = $('.navbar-collapse');
+            var navMenuOpen = navbar.hasClass('show');
+            if (navMenuOpen === true && !target.hasClass('navbar-toggle')) {
+                navbar.collapse('hide');
+            }
+        }
+    });
+
     // EVENT LISTENER TO CLOSE FLASK ALERT MESSAGES
-    $('.flask-alert button.close').on('click', function () {
+    $('.flask-alert button.close').on('click touch', function () {
         var closeId = this.getAttribute('data-dismiss');
         $('#' + closeId).remove();
     });
