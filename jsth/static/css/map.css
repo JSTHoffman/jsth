@@ -1,0 +1,15 @@
+.leaflet-control-locate a,
+.leaflet-control-locate.requesting a {
+    padding: 0;
+}
+
+.leaflet-popup-content-wrapper,
+.leaflet-popup-tip {
+    background-color: #343a40;
+}
+
+.trail-popup p,
+.leaflet-popup-content-wrapper p,
+.leaflet-popup-close-button {
+    color: gainsboro;
+}
