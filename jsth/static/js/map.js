@@ -231,15 +231,20 @@ $(document).ready(function () {
     // SET THE ZOOM CONTROL POSITION
     map.zoomControl.setPosition('topright');
 
-    // ADD A SCALE BAR TO THE MAP
-    L.control.scale().addTo(map);
-
     // ADD A GEOLOCATION CONTROL TO THE MAP
     L.control.locate({
         position: 'topright',
         drawMarker: false,
         icon: 'fas fa-crosshairs'
     }).addTo(map);
+
+    // ADD A FULLSCREEN CONTROL
+    map.addControl(new L.Control.Fullscreen({
+        position: 'topright'
+    }));
+
+    // ADD A SCALE BAR TO THE MAP
+    L.control.scale().addTo(map);
 
     // ADD GEOLOCATION EVENT LISTENERS
     map.on('locationfound', onLocationFound);
