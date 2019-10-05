@@ -6,9 +6,10 @@
   <link rel="stylesheet" href="https://api.mapbox.com/mapbox.js/plugins/leaflet-locatecontrol/v0.43.0/L.Control.Locate.mapbox.css"/>
   <link rel="stylesheet" href="{{ url_for('static', filename='css/map.css') }}">
 
-  <script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js" integrity="sha512-GffPMF3RvMeYyc1LWMHtK8EbPv0iNZ8/oTtHPx9/cc2ILxQ+u905qIwdpULaqDkyBKgOaB57QTMg7ztg8Jm2Og==" crossorigin=""></script>
-  <script src="https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/Leaflet.fullscreen.min.js"></script>
-  <script src="https://api.mapbox.com/mapbox.js/plugins/leaflet-locatecontrol/v0.43.0/L.Control.Locate.min.js"></script>
+  <script defer src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js" integrity="sha512-GffPMF3RvMeYyc1LWMHtK8EbPv0iNZ8/oTtHPx9/cc2ILxQ+u905qIwdpULaqDkyBKgOaB57QTMg7ztg8Jm2Og==" crossorigin=""></script>
+  <script defer src="https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/Leaflet.fullscreen.min.js"></script>
+  <script defer src="https://api.mapbox.com/mapbox.js/plugins/leaflet-locatecontrol/v0.43.0/L.Control.Locate.min.js"></script>
+  <script defer src="{{ url_for('static', filename='js/map.js') }}" type="module"></script>
 {% endblock %}
 
 {% block title %} - Hiking Santa Barbara{% endblock %}
@@ -29,8 +30,4 @@
   <div class="container-fluid h-100 p-0">
     <div id="map" class="h-100"></div>
   </div>
-{% endblock %}
-
-{% block footer_scripts %}
-  <script src="{{ url_for('static', filename='js/map.js') }}"></script>
 {% endblock %}

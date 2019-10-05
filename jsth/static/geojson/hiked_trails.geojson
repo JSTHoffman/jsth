@@ -11,7 +11,7 @@
         {
             "type": "Feature",
             "properties": {
-                "Name": "Inspiration Point Trail",
+                "name": "Inspiration Point Trail",
                 "description": null,
                 "timestamp": null,
                 "begin": null,
@@ -2481,7 +2481,7 @@
         {
             "type": "Feature",
             "properties": {
-                "Name": "Knapp's Castle Trail",
+                "name": "Knapp's Castle Trail",
                 "description": null,
                 "timestamp": null,
                 "begin": null,
@@ -3001,7 +3001,7 @@
         {
             "type": "Feature",
             "properties": {
-                "Name": "Parma Park Trail",
+                "name": "Parma Park Trail",
                 "description": null,
                 "timestamp": null,
                 "begin": null,
@@ -4941,7 +4941,7 @@
         {
             "type": "Feature",
             "properties": {
-                "Name": "Rattlesnake Canyon Trail",
+                "name": "Rattlesnake Canyon Trail",
                 "description": null,
                 "timestamp": null,
                 "begin": null,
@@ -7966,7 +7966,7 @@
         {
             "type": "Feature",
             "properties": {
-                "Name": "Saddle Rock Trail",
+                "name": "Saddle Rock Trail",
                 "description": null,
                 "timestamp": null,
                 "begin": null,
@@ -10766,7 +10766,7 @@
         {
             "type": "Feature",
             "properties": {
-                "Name": "South Sister Trail",
+                "name": "South Sister Trail",
                 "description": null,
                 "timestamp": null,
                 "begin": null,

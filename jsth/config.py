@@ -1,5 +1,5 @@
 '''
-Configuration module for mugatu. Contains settings specific
+The config module contains settings specific
 to local, development, and production environments.
 '''
 
