@@ -1,6 +1,7 @@
 'use strict';
 
 import { createAlert } from './base.js';
+import { geoJSONLength } from './geojson-length.js';
 
 // GEOJSON TRAIL FILES
 const trailsFile = 'hiked_trails.geojson';
@@ -97,6 +98,14 @@ function loadGeoJSONLayer(fileName, layerName, options = {}) {
         url: 'api/get-geojson/' + fileName,
         dataType: 'json',
         success: function (response) {
+            response.features.forEach(function (feature) {
+                if (feature.geometry.type === 'LineString' || 'MultiLineString') {
+                    var length = geoJSONLength(feature.geometry);
+                    feature.properties.length = length;
+                    console.log(feature.properties.name + ': ' + feature.properties.length);
+                }
+            });
+
             var geoJSONLayer = L.geoJSON(response, options);
 
             // ADD LAYER TO MAP AND LAYER CONTROL
@@ -108,6 +117,20 @@ function loadGeoJSONLayer(fileName, layerName, options = {}) {
             createAlert('Error loading geojson file: ' + fileName, 'danger');
         }
     });
+}
+
+/*
+ * CREATES THE POPUP CONTENT FOR A HIKED TRAIL
+ */
+function hikedTrailPopup (trail) {
+    return '<div class="container-fluid">' +
+           '  <div class="row">' +
+           '    <div class="column">' +
+           '      <p class="lead trail-popup">' + trail.properties.name + '</p>' +
+           '      <p>Round trip distance: ' + trail.properties.length.toFixed(2) + ' miles.</p>' +
+           '    </div>' +
+           '  </div>' +
+           '</div>';
 }
 
 /*
@@ -123,7 +146,8 @@ function loadHikedTrails() {
             className: 'hiked-trail'
         },
         onEachFeature: function (feature, layer) {
-            layer.bindPopup('<p class="lead trail-popup">' + feature.properties.Name + '</p>');
+            // ADD A POPUP TO THE TRAIL LAYER
+            layer.bindPopup(hikedTrailPopup(feature));
         }
     });
 }
@@ -171,6 +195,7 @@ function loadTrailheads() {
                 if (trailheads.current.includes(trail.id) == false) {
                     trailheads.current.push(trail.id);
 
+                    // CREATE THE TRAILHEAD MARKER
                     var marker = L.circleMarker([trail.latitude, trail.longitude], {
                         radius: 6,
                         stroke: false,
@@ -180,6 +205,7 @@ function loadTrailheads() {
                     });
 
                     marker.bindPopup(trailheadPopup(trail));
+                    // ADD THE MARKER TO THE TRAILHEADS FEATURE GROUP
                     marker.addTo(trailheads.featureGroup);
                 }
             });
