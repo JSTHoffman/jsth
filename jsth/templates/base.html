@@ -19,12 +19,16 @@
     <title>Jaime Hoffman{% block title %}{% endblock %}</title>
 
     <link rel="shortcut icon" href="{{ url_for('static', filename='img/favicons/favicon_jh_upper.png') }}">
+
+    <!-- Load JQuery first -->
+    <script defer src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+
+    <!-- Then Bootstrap and base CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/base.css') }}">
 
-    <!-- Font Awesome, JQuery, Popper, and Bootstrap plugins -->
+    <!-- Then Font Awesome, Popper, and Bootstrap plugins -->
     <script src="https://kit.fontawesome.com/516be5bd66.js" crossorigin="anonymous"></script>
-    <script defer src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
     <script defer src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script defer src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <script defer src="{{ url_for('static', filename='js/base.js') }}" type="module"></script>
@@ -114,7 +118,7 @@
               {% block header_title %}{% endblock %}
             </h1>
           </div>
-          <div class="col-12 col-md-8 col-lg-6 header-subtitle-container">
+          <div class="col-12 col-md-10 col-lg-8 header-subtitle-container">
             <p class="mb-1 header-subtitle">
               {% block header_subtitle %}{% endblock %}
             </p>
@@ -138,7 +142,9 @@
           </div>
         </div>
         <div class="row justify-content-center">
-          <small>&copy; 2019 Jaime Hoffman</small>
+          <small>
+            &copy;<script>document.write(new Date().getFullYear());</script> Jaime Hoffman
+          </small>
         </div>
       </div>
     </footer>

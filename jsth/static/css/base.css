@@ -1,7 +1,9 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat:400,400i,700,700i');
 @import url('https://fonts.googleapis.com/css?family=Tangerine:400');
 
-/* RESPONSIVE HEADER FONT SIZES */
+/* #################################### */
+/* ### Responsive header font sizes ### */
+/* #################################### */
 @media (min-width: 0px) {
   .header-title {font-size: 1.5em;}
   .header-subtitle {font-size: 0.8em;}
@@ -17,6 +19,9 @@
   .header-subtitle {font-size: 1em;}
 }
 
+/* ############################# */
+/* ### Base template styling ### */
+/* ############################# */
 body {
   color: gainsboro;
   font-family: 'Montserrat', sans-serif;
@@ -54,4 +59,87 @@ footer a:hover {
 
 footer a img {
   height: 2em;
+}
+
+/* ######################## */
+/* ### Homepage styling ### */
+/* ######################## */
+.header-title {
+  padding-bottom: 0.2em;
+}
+
+.header-title span {
+  color: gainsboro;
+}
+
+/* Homepage gallery styling */
+.carousel {
+  min-height: 65vh;
+}
+
+.carousel-item.active,
+.carousel-item-next,
+.carousel-item-prev,
+.carousel-item-right,
+.carousel-item-left {
+  display: flex;
+  justify-content: center;
+  align-self: center;
+}
+
+.carousel-item a img {
+  max-height: 60vh;
+  max-width: 75vw;
+  width: auto;
+  margin-bottom: 0 !important;
+}
+
+/* ########################## */
+/* ### About page styling ### */
+/* ########################## */
+.drop-cap:first-child:first-letter {
+  float: left;
+  font-size: 300%;
+  font-weight: bold;
+  padding: 0.1em 0.1em 0.1em 0;
+  line-height: 0.8em;
+}
+
+/* ######################## */
+/* ### Map page styling ### */
+/* ######################## */
+.leaflet-control-locate a,
+.leaflet-control-locate.requesting a {
+    padding: 0;
+}
+
+.leaflet-popup-content-wrapper,
+.leaflet-popup-tip {
+    background-color: #343a40;
+}
+
+.trail-popup p,
+.leaflet-popup-content-wrapper p,
+.leaflet-popup-close-button {
+    color: gainsboro;
+}
+
+/* ############################# */
+/* ### Photo gallery styling ### */
+/* ############################# */
+.gallery-image {
+  border-color: gainsboro !important;
+  border-width: 0.4em !important;
+}
+
+/* ############################ */
+/* ### Contact page styling ### */
+/* ############################ */
+a.contact-link {
+  color: gainsboro;
+}
+
+a.contact-link:hover {
+  color: gainsboro;
+  text-decoration: underline;
 }
