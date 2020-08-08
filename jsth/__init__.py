@@ -12,7 +12,7 @@ from flask import Flask
 from flask_talisman import Talisman
 
 from jsth import config
-from jsth.api import api
+from jsth.api import api_bp
 # from jsth.db import init_db
 from jsth.routes import register_routes
 
@@ -37,8 +37,7 @@ def create_app():
         # REGISTER APP LEVEL ROUTES
         register_routes(app)
 
-        # REGISTER BLUEPRINTS
-        app.register_blueprint(api)
+        app.register_blueprint(api_bp)
 
         # INITIALIZE DATABASE
         # init_db(app)
