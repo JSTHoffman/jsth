@@ -267,6 +267,9 @@ $(document).ready(function () {
         icon: 'fas fa-crosshairs'
     }).addTo(map);
 
+    // Fix padding on the locate control
+    $('div.leaflet-control-locate a').css('padding', 0);
+
     // Add a fullscreen control to the map
     map.addControl(new L.Control.Fullscreen({
         position: 'topright'
