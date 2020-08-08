@@ -22,6 +22,8 @@ class Config(object):
     PHOTO_GALLERY_ALBUM_ID = 'ANSNXO_rLAuJRTak0ElJ1sbi5EJdPxQYiCJPmh9OsKBoHlxxDdr0XZjBfJcAW3YtB0c2kWqyEDUj'
     PHOTO_GALLERY_MEDIA_FILE = 'photo_album_media.json'
 
+    # Custom content security policy
+    # using Google CSP as the base
     CSP = GOOGLE_CSP_POLICY
     CSP.update({
         'default-src': [
