@@ -4,11 +4,8 @@ $(document).ready(function() {
     $('img.gallery-image').last().on('load', function() {
         // Fade out the loading overlay
         // when the last image has loaded
-        setTimeout(function() {
-            console.log('changing opacity...');
-            $('#loading-overlay').fadeOut(1000);
-            $('#photo-gallery').fadeIn(1000);
-        }, 1000);
+        $('#loading-overlay').fadeOut(1000);
+        $('#photo-gallery').fadeIn(1000);
     }).each(function() {
         // Reload the last image if was loaded from cache
         // to trigger the loading overaly fade out
