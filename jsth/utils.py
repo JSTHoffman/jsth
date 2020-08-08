@@ -36,7 +36,7 @@ def load_photos_album(album_id):
         Tries to request a photo URL. Returns False if the response is 403
         (need to make photos API request again), otherwise returns True.
         '''
-        res = requests.get(data[0]['baseUrl'])
+        res = requests.get(url)
 
         if res.status_code == 403:
             return False
