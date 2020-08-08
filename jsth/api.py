@@ -55,10 +55,10 @@ def google_auth_callback():
             'success': False,
             'message': f"authentication error: {authorization_response['error']}"
         }))
-    else:
-        app.google_credentials = flow.credentials
 
-        return redirect(url_for('photo_gallery'))
+    app.google_credentials = flow.credentials
+
+    return redirect(url_for('photo_gallery'))
 
 
 @api_bp.errorhandler(404)
