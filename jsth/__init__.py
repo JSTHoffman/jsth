@@ -12,7 +12,7 @@ from flask import Flask
 from flask_talisman import Talisman
 
 from jsth import config
-from jsth.api import api
+from jsth.api import api_bp
 # from jsth.db import init_db
 from jsth.routes import register_routes
 
@@ -23,27 +23,27 @@ def create_app():
     '''
     env = os.getenv('FLASK_ENV', 'local')
 
-    # INSTANCE RELATIVE CONFIG TELLS FLASK TO USE
-    # CONFIG FILES LOCATED IN THE INSTANCE DIRECTORY
+    # instance_relative_config tells flask to use
+    # config files located in the instance directory
     app = Flask(__name__, instance_relative_config=True)
 
     with app.app_context():
-        # LOAD DEFAULT CONFIGURATION
+        # Load default configuration
         app.config.from_object(config.app_config[env])
 
-        # USE CONTENT SECURITY POLICY USING TALISMAN
+        # Set content security policy using Talisman
         Talisman(app, content_security_policy=app.config['CSP'])
 
-        # REGISTER APP LEVEL ROUTES
+        # Register app level routes
         register_routes(app)
 
-        # REGISTER BLUEPRINTS
-        app.register_blueprint(api)
+        # Register blueprints
+        app.register_blueprint(api_bp)
 
-        # INITIALIZE DATABASE
+        # Initialize database
         # init_db(app)
 
-        # REGISTER CUSTOM CLI COMMANDS
+        # Register custom cli commands
         # app.cli.add_command(user_cli)
 
     return app

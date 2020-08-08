@@ -4,7 +4,6 @@
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css" integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ==" crossorigin=""/>
   <link rel="stylesheet" href="https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/leaflet.fullscreen.css"/>
   <link rel="stylesheet" href="https://api.mapbox.com/mapbox.js/plugins/leaflet-locatecontrol/v0.43.0/L.Control.Locate.mapbox.css"/>
-  <link rel="stylesheet" href="{{ url_for('static', filename='css/map.css') }}">
 
   <script defer src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js" integrity="sha512-GffPMF3RvMeYyc1LWMHtK8EbPv0iNZ8/oTtHPx9/cc2ILxQ+u905qIwdpULaqDkyBKgOaB57QTMg7ztg8Jm2Og==" crossorigin=""></script>
   <script defer src="https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/Leaflet.fullscreen.min.js"></script>
@@ -21,13 +20,13 @@
   Hiking Santa Barbara
 {% endblock %}
 {% block header_subtitle%}
-  This web map shows some hiking trails in the Santa Barbara area (and some
-  other places) that I mapped using a handheld GPS unit. More data coming
-  as soon as I get outside more.
+  This map shows some hiking trails in the Santa Barbara area (and some other
+  places) that I mapped using a handheld GPS unit. Trailheads from REI's Hiking
+  Project are included as well. More data coming as soon as I get outside more.
 {% endblock %}
 
 {% block main_content %}
-  <div class="container-fluid h-100 p-0">
+  <div class="container-fluid p-0">
     <div id="map" class="h-100"></div>
   </div>
 {% endblock %}

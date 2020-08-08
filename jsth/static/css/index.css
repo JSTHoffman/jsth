@@ -1,13 +1,11 @@
 .header-title {
-    color: #343a40;
-    font-weight: bold;
-    padding-bottom: 0.2em;
-    text-align: center;
+  color: #343a40;
+  font-weight: bold;
+  text-align: center;
 }
 
 .header-title span {
-    color: gainsboro;
-    text-shadow: 0.1em 0.1em 0.05em #343a40;
+  text-shadow: 0.1em 0.1em 0.05em #343a40;
 }
 
 .header-subtitle-container {

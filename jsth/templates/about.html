@@ -1,7 +1,6 @@
 {% extends "base.html" %}
 
 {% block head %}
-  <link rel="stylesheet" href="{{ url_for('static', filename='css/about.css') }}">
 {% endblock %}
 
 {% block title %} - About{% endblock %}
@@ -17,26 +16,25 @@
 {% endblock %}
 
 {% block main_content %}
-  <div class="container h-100">
-    <div class="row d-flex align-items-center h-100">
+  <div class="container">
+    <div class="row align-items-center">
       <div class="col-12">
         <p class="drop-cap">
           Some info about me: I enjoy the natural sciences, geography (especially GIS),
-          programming (especially in Python), web development, and grapic design. I have recently
-          become intrigued by the <a class="text-monospace" target="_blank" href="http://flask.pocoo.org/">flask</a>
-          microframework and this website is, in part, an exersice in developing my knowledge
-          of <span class="text-monospace">flask</span>.
+          programming (especially in Python), web development, and grapic design. I'm also
+          a minor gearhead and a major DIYer. I like working on projects, fixing things,
+          cooking, and the outdoors.
         </p>
         <p>
           I grew up in <a target="_blank" href="https://en.wikipedia.org/wiki/Ithaca,_New_York">Ithaca, NY</a>
-          where as a high school student I became interested in Environmental Sciences which
+          where as a high school student I became interested in Environmental Sciences, which
           I went on to study in college at the <a target="_blank" href="https://www.fredonia.edu/"> State University of New York at Fredonia</a>.
           Through courses in GIS I became interested in Geography and spatial data analysis
-          and after graduating I worked as a research tech at the <a target="_blank" href="http://lergp.com/">Cornell Lake Erie Research and Extension Lab</a>
+          and after graduating I worked as a research technician at the <a target="_blank" href="http://lergp.com/">Cornell Lake Erie Research and Extension Lab</a>
           studying techniques for measuring and mapping Concord grape vine canopy density in local vineyards.
         </p>
         <p>
-          I then moved out to the west coast and took another research tech position
+          I then moved out to the west coast and took another research tech. position
           with the <a target="_blank" href="http://www.citrusresearch.org/">Citrus Research Board</a>
           in <a target="_blank" href="https://en.wikipedia.org/wiki/Riverside,_California">Riverside, CA</a>
           where I worked with a small team to develop a field rearing method for

@@ -2,7 +2,6 @@
 
 {% block head %}
   <link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}">
-  <link rel="stylesheet" href="{{ url_for('static', filename='css/gallery.css') }}">
 {% endblock %}
 
 {% block title %} - Home{% endblock %}
@@ -11,7 +10,7 @@
 {% block nav_menu_item_link_home %}active{% endblock %}
 
 {% block header_title %}
-  &lt<span class="font-italic text-capitalize">&nbsp;jaime hoffman&nbsp;</span>/&gt
+  &lt/<span class="font-italic text-capitalize">&nbsp;jaime hoffman&nbsp;</span>&gt
 {% endblock %}
 
 {% block header_subtitle %}
@@ -19,7 +18,7 @@
 {% endblock %}
 
 {% block main_content %}
-  <div class="container-fluid d-flex flex-column h-100">
+  <div class="container-fluid flex-column">
     <div class="row flex-grow-1">
       <div class="col-12">
         <div id="carousel-indicators" class="carousel slide d-flex h-100 w-100" data-ride="carousel">

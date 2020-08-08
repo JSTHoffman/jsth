@@ -1,12 +1,17 @@
 '''
-All application routes.
+All "frontend" routes.
 '''
 
 
 from flask import (
     make_response,
+    redirect,
     render_template,
     request
+)
+
+from jsth import (
+    utils
 )
 
 
@@ -46,6 +51,21 @@ def register_routes(app):
     @app.route('/gallery', methods=['GET'])
     def gallery():
         return render_template('gallery.html')
+
+    @app.route('/photo-gallery', methods=['GET'])
+    def photo_gallery():
+        google_credentials = getattr(app, 'google_credentials', None)
+
+        if google_credentials:
+            app.logger.debug('found credentials!')
+
+            media = utils.load_photos_album(app.config['PHOTO_GALLERY_ALBUM_ID'])
+            media.reverse()
+
+            return render_template('photo-gallery.html', media=media)
+
+        authorization_url = utils.google_auth()
+        return redirect(authorization_url)
 
     @app.route('/contact', methods=['GET'])
     def contact():

@@ -3,11 +3,11 @@
 import { createAlert } from './base.js';
 import { geoJSONLength } from './geojson-length.js';
 
-// GEOJSON TRAIL FILES
+// GeoJSON trail files
 const trailsFile = 'hiked_trails.geojson';
 
-// MAP HIKING PROJECT
-// DIFFICULTIES TO COLORS
+// Map Hiking Project
+// difficulties to colors
 const difficultyColors = {
     'green': '#588f00',
     'greenBlue': '#588f00',
@@ -17,8 +17,8 @@ const difficultyColors = {
     'dblack': '#000000'
 };
 
-// MAP HIKING PROJECT
-// DIFFICULTIES TO OPACITIES
+// Map Hiking Project
+// difficulties to opacities
 const difficultyOpacities = {
     'green': 0.5,
     'greenBlue': 0.7,
@@ -28,7 +28,7 @@ const difficultyOpacities = {
     'dblack': 0.7
 };
 
-// SET SOME CONSTANTS FOR THE MAP
+// Set some constants for the map
 const mapCenter = [34.46, -119.70],
       tileUrl = 'https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}{r}?&access_token={accessToken}',
       mapboxToken = 'pk.eyJ1IjoianN0aG9mZm1hbiIsImEiOiJjaWs0aXJtOGkwMDRtdmxtMmdiaTRkaXA4In0.zu6Ew9PAAPv_ShrQ8zbDlA',
@@ -37,7 +37,7 @@ const mapCenter = [34.46, -119.70],
         '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> ' +
         '<strong><a href="https://www.mapbox.com/map-feedback/" target="_blank">Improve this map</a></strong>';
 
-// CREATE OUTDOOR AND SATELLITE BASE LAYERS
+// Create outdoor and satellite base layers
 var outdoors = L.tileLayer(tileUrl, {
     id: 'mapbox/outdoors-v11',
     r: '@2x',
@@ -58,20 +58,20 @@ var satellite = L.tileLayer(tileUrl, {
     accessToken: mapboxToken
 });
 
-// MAKE THE MAP AND IT'S LAYER
-// CONTROL ACCESSIBLE EVERYWHERE
+// Make the map and it's layer
+// control accessible everywhere
 var map, layerControl;
 
-// OBJECT FOR STORING TRAILHEADS CURRENTLY
-// ON THE MAP AS WELL AS THE MAP FEATURES
+// Object for storing trailheads currently
+// on the map as well as the map features
 var trailheads = {
     current: [],
     featureGroup: L.featureGroup()
 };
 
 /*
- * PRINTS SOME INFO TO THE CONSOLE
- * WHEN USER GEOLOCATION IS SUCCESSFUL
+ * Prints some info to the console
+ * when user geolocation is successful
 */
 function onLocationFound(e) {
     console.log(
@@ -81,16 +81,16 @@ function onLocationFound(e) {
 }
 
 /*
- * PRINTS SOME INFO TO THE CONSOLE
- * WHEN USER GEOLOCATION FAILS
+ * Prints some info to the console
+ * when user geolocation fails
 */
 function onLocationError(e) {
     console.log(e.message);
 }
 
 /*
- * REQUESTS A GEOJSON FILE SERVED BY FLASK
- * AND LOADS IT AS A LEAFLET GEOJSON LAYER
+ * Requests a GeoJSON file served by flask
+ * and loads it as a leaflet GeoJSON layer
 */
 function loadGeoJSONLayer(fileName, layerName, options = {}) {
     $.ajax({
@@ -108,7 +108,7 @@ function loadGeoJSONLayer(fileName, layerName, options = {}) {
 
             var geoJSONLayer = L.geoJSON(response, options);
 
-            // ADD LAYER TO MAP AND LAYER CONTROL
+            // Add layer to map and layer control
             geoJSONLayer.addTo(map);
             layerControl.addOverlay(geoJSONLayer, layerName);
         },
@@ -120,7 +120,7 @@ function loadGeoJSONLayer(fileName, layerName, options = {}) {
 }
 
 /*
- * CREATES THE POPUP CONTENT FOR A HIKED TRAIL
+ * Creates the popup content for a hiked trail
  */
 function hikedTrailPopup (trail) {
     return '<div class="container-fluid">' +
@@ -134,8 +134,8 @@ function hikedTrailPopup (trail) {
 }
 
 /*
- * LOADS THE HIKED TRAILS GEOJSON FILE AND ADDS IT'S
- * FEATURES TO THE MAP WITH STYLING AND POPUP OPTIONS
+ * Loads the hiked trails GeoJSON file and adds it's
+ * features to the map with styling and popup options
 */
 function loadHikedTrails() {
     loadGeoJSONLayer(trailsFile, 'Hiked Trails', {
@@ -146,15 +146,15 @@ function loadHikedTrails() {
             className: 'hiked-trail'
         },
         onEachFeature: function (feature, layer) {
-            // ADD A POPUP TO THE TRAIL LAYER
+            // Add a popup to the trail layer
             layer.bindPopup(hikedTrailPopup(feature));
         }
     });
 }
 
 /*
- * CREATES THE POPUP CONTENT
- * FOR A TRAILHEAD MARKER
+ * Creates the popup content
+ * for a trailhead marker
 */
 function trailheadPopup(trail) {
     return '<div class="container-fluid">' +
@@ -168,9 +168,9 @@ function trailheadPopup(trail) {
 }
 
 /*
- * LOADS TRAILHEAD DATA FROM THE HIKING PROJECT
- * AND ADDS EACH FEATURE TO THE MAP AS A CIRCLE MARKER
- * WITH STYLING, POPUP, AND TOOLTIP OPTIONS
+ * Loads trailhead data from The Hiking Project
+ * and adds each feature to the map as a circle marker
+ * with styling, popup, and tooltip options
 */
 function loadTrailheads() {
     $.ajax({
@@ -186,16 +186,16 @@ function loadTrailheads() {
         dataType: 'json',
         success: function (response) {
             response.trails.forEach(function (trail) {
-                // ADD TRAILHEADS GROUP TO THE MAP IF IT HASN'T BEEN
+                // Add trailheads group to the map if it hasn't been
                 if (map.hasLayer(trailheads.featureGroup) == false) {
                     trailheads.featureGroup.addTo(map);
                 }
 
-                // ADD NEW TRAILHEADS TO THE MAP
+                // Add new trailheads to the map
                 if (trailheads.current.includes(trail.id) == false) {
                     trailheads.current.push(trail.id);
 
-                    // CREATE THE TRAILHEAD MARKER
+                    // Create the trailhead marker
                     var marker = L.circleMarker([trail.latitude, trail.longitude], {
                         radius: 6,
                         stroke: false,
@@ -205,7 +205,7 @@ function loadTrailheads() {
                     });
 
                     marker.bindPopup(trailheadPopup(trail));
-                    // ADD THE MARKER TO THE TRAILHEADS FEATURE GROUP
+                    // Add the marker to the trailheads feature group
                     marker.addTo(trailheads.featureGroup);
                 }
             });
@@ -218,16 +218,16 @@ function loadTrailheads() {
 }
 
 /*
- * EXECUTED ON THE MAP'S MOVEEND EVENT
+ * Executed on the map's moveend event
 */
 function onMoveEnd() {
-    // LOAD MORE TRAILHEADS
+    // Load more trailheads
     loadTrailheads();
     console.log('Total trails: ' + trailheads.current.length);
 }
 
 $(document).ready(function () {
-    // CREATE THE MAP
+    // Create the map
     map = L.map('map', {
         center: mapCenter,
         zoom: 12,
@@ -243,43 +243,46 @@ $(document).ready(function () {
         'Trail Heads': trailheads.featureGroup
     };
 
-    // CREATE A LAYER CONTROL THAT
-    // WE CAN START ADDING DATA TO
+    // Create a layer control that
+    // we can start adding data to
     layerControl = L.control.layers(baseLayers, overlayLayers, {
         position: 'topleft'
     }).addTo(map);
 
-    // LOAD HIKED TRAIL DATA ASYNCHRONOUSLY AND
-    // ADD IT TO THE MAP AND LAYER CONTROL
+    // Load hiked trail data asynchronously and
+    // add it to the map and layer control
     loadHikedTrails();
 
-    // LOAD TRAILHEAD DATA ASYNCHRONOUSLY AND
-    // ADD IT TO THE MAP AND LAYER CONTROL
+    // Load trailhead data asynchronously and
+    // add it to the map and layer control
     loadTrailheads();
 
-    // SET THE ZOOM CONTROL POSITION
+    // Set the zoom control position
     map.zoomControl.setPosition('topright');
 
-    // ADD A GEOLOCATION CONTROL TO THE MAP
+    // Add a geolocation control to the map
     L.control.locate({
         position: 'topright',
         drawMarker: false,
         icon: 'fas fa-crosshairs'
     }).addTo(map);
 
-    // ADD A FULLSCREEN CONTROL TO THE MAP
+    // Fix padding on the locate control
+    $('div.leaflet-control-locate a').css('padding', 0);
+
+    // Add a fullscreen control to the map
     map.addControl(new L.Control.Fullscreen({
         position: 'topright'
     }));
 
-    // ADD A SCALE BAR TO THE MAP
+    // Add a scale bar to the map
     L.control.scale().addTo(map);
 
-    // ADD GEOLOCATION EVENT LISTENERS
+    // Add geolocation event listeners
     map.on('locationfound', onLocationFound);
     map.on('locationerror', onLocationError);
 
-    // ADD MOVEEND EVENT LISTENER THAT LOADS
-    // MORE TRAILHEADS WHEN THE MAP IS MOVED
+    // Add moveend event listener that loads
+    // more trailheads when the map is moved
     map.on('moveend', onMoveEnd);
 });

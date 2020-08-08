@@ -32,8 +32,8 @@ def get_db():
             detect_types=sqlite3.PARSE_DECLTYPES
         )
 
-        # TELLS THE CONNECTION TO RETURN
-        # ROWS THAT BEHAVE LIKE DICTS
+        # Tells the connection to return
+        # rows that behave like python dicts
         g.sqlite.row_factory = sqlite3.Row
 
     return g.sqlite
@@ -46,12 +46,12 @@ def init_db(app):
     '''
     db = get_db()
 
-    # OPEN AND EXECUTE INIT SCRIPT
+    # Open and execute init script
     with app.open_resource('schema.sql') as sql_file:
         db.executescript(sql_file.read().decode('utf8'))
 
-    # CLOSE THE DATABSE CONNECTION
-    # AT THE END OF EACH REQUEST
+    # Close the database connection
+    # at the end of each request
     app.teardown_appcontext(close_db)
 
 

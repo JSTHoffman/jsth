@@ -1,7 +1,6 @@
 {% extends "base.html" %}
 
 {% block head %}
-  <link rel="stylesheet" href="{{ url_for('static', filename='css/contact.css') }}">
 {% endblock %}
 
 {% block title %} - Contact{% endblock %}
@@ -18,7 +17,7 @@
 {% endblock %}
 
 {% block main_content %}
-  <div class="container-fluid d-flex justify-content-center align-items-center h-100">
-      <a href="mailto:jsthoffman90@gmail.com"><span class="lead">jsthoffman90@gmail.com</span></a>
+  <div class="container-fluid d-flex justify-content-center align-items-center flex-grow">
+      <a class="contact-link" href="mailto:jsthoffman90@gmail.com"><span class="lead">jsthoffman90@gmail.com</span></a>
   </div>
 {% endblock %}
