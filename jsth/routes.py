@@ -54,7 +54,7 @@ def register_routes(app):
 
     @app.route('/photo-gallery', methods=['GET'])
     def photo_gallery():
-        app.logger.info('app instance path: %s', app.instance_path)
+        app.logger.debug('app instance path: %s', app.instance_path)
 
         google_credentials = getattr(app, 'google_credentials', None)
 
