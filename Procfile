@@ -1,2 +1,2 @@
-release: python manage.py init_flask_instance
+release: python release.py
 web: gunicorn jsth.wsgi:app
