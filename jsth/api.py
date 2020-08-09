@@ -40,7 +40,7 @@ def load_geojson(filename):
 @api_bp.route('/auth/google/callback', methods=['GET'])
 def google_auth_callback():
     flow = Flow.from_client_secrets_file(
-        os.path.join('instance', 'google_credentials.json'),
+        os.path.join(app.instance_path, app.config['GOOGLE_CREDENTIALS_FILE']),
         scopes=['https://www.googleapis.com/auth/photoslibrary.readonly'],
     )
 

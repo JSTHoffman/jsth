@@ -65,6 +65,7 @@ def register_routes(app):
             return render_template('photo-gallery.html', media=media)
 
         authorization_url = utils.google_auth()
+
         return redirect(authorization_url)
 
     @app.route('/contact', methods=['GET'])
