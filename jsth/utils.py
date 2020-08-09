@@ -72,7 +72,6 @@ def google_auth():
     '''
     Handles authentication of the Google Photos API.
     '''
-    app.logger.info('app instance path: %s', app.instance_path)
     flow = Flow.from_client_secrets_file(
         os.path.join(app.instance_path, app.config['GOOGLE_CREDENTIALS_FILE']),
         scopes=['https://www.googleapis.com/auth/photoslibrary.readonly']
