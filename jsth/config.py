@@ -16,6 +16,7 @@ class Config(object):
     DEBUG = True
     CSRF_ENABLED = True
     SECRET_KEY = os.getenv('SECRET_KEY')
+    GOOGLE_CREDENTIALS_FILE = 'google_credentials.json'
 
     DATABASE = 'jsth.sqlite'
 
