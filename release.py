@@ -21,6 +21,9 @@ def release():
     else:
         logging.info('instance directory found!')
 
+    cwd = os.getcwd()
+    logging.info('instance directory path: %s', f'{cwd}/instance')
+
     logging.info('writing google credentials to instance directory...')
     with open('instance/google_credentials.json', 'w') as fh:
         fh.write(os.getenv('GOOGLE_CREDENTIALS'))
