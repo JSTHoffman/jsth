@@ -38,6 +38,7 @@ def register_routes(app):
 
     @app.route('/', methods=['GET'])
     def index():
+        app.logger.debug('app instance path: %s', app.instance_path)
         return render_template('index.html')
 
     @app.route('/about', methods=['GET'])
@@ -54,8 +55,6 @@ def register_routes(app):
 
     @app.route('/photo-gallery', methods=['GET'])
     def photo_gallery():
-        app.logger.debug('app instance path: %s', app.instance_path)
-
         google_credentials = getattr(app, 'google_credentials', None)
 
         if google_credentials:
