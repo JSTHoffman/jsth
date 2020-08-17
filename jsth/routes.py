@@ -3,6 +3,8 @@ All "frontend" routes.
 '''
 
 
+import os
+
 from flask import (
     make_response,
     redirect,
@@ -39,6 +41,9 @@ def register_routes(app):
     @app.route('/', methods=['GET'])
     def index():
         app.logger.info('app instance path: %s', app.instance_path)
+        files = os.listdir('./instance')
+        app.logger.info('instance directory contents: %s', files)
+
         return render_template('index.html')
 
     @app.route('/about', methods=['GET'])
