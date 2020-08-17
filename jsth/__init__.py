@@ -6,6 +6,7 @@ For more information see http://flask.pocoo.org/docs/dev/tutorial/factory/
 '''
 
 
+import logging
 import os
 
 from flask import Flask
@@ -26,6 +27,13 @@ def create_app():
     # instance_relative_config tells flask to use
     # config files located in the instance directory
     app = Flask(__name__, instance_relative_config=True)
+
+    # Set log level
+    if env == 'production':
+        app.logger.setLevel(logging.INFO)
+    else:
+        app.logger.setLevel(logging.DEBUG)
+    app.logger.info('Environment: %s', env)
 
     with app.app_context():
         # Load default configuration
