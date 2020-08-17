@@ -41,7 +41,7 @@ def register_routes(app):
     @app.route('/', methods=['GET'])
     def index():
         app.logger.info('app instance path: %s', app.instance_path)
-        files = os.listdir('./instance')
+        files = os.listdir(app.instance_path)
         app.logger.info('instance directory contents: %s', files)
 
         return render_template('index.html')

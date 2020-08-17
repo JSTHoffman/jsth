@@ -33,6 +33,7 @@ def create_app():
         app.logger.setLevel(logging.INFO)
     else:
         app.logger.setLevel(logging.DEBUG)
+
     app.logger.info('Environment: %s', env)
 
     with app.app_context():
