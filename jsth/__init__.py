@@ -49,6 +49,9 @@ def create_app():
         # Register blueprints
         app.register_blueprint(api_bp)
 
+        # Create instance directory
+        create_instance_dir(app)
+
         # Initialize database
         # init_db(app)
 
@@ -56,3 +59,16 @@ def create_app():
         # app.cli.add_command(user_cli)
 
     return app
+
+
+def create_instance_dir(app):
+    app.logger.info('checking for instance directory...')
+    if not os.path.exists(app.instance_path):
+        app.logger.info('creating instance directory...')
+        os.makedirs(app.instance_path)
+    else:
+        app.logger.info('instance directory found!')
+
+    app.logger.info('writing google credentials to instance directory...')
+    with open(f'{app.instance_path}/google_credentials.json', 'w') as fh:
+        fh.write(os.getenv('GOOGLE_CREDENTIALS'))
