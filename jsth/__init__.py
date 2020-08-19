@@ -68,7 +68,3 @@ def create_instance_dir(app):
         os.makedirs(app.instance_path)
     else:
         app.logger.info('instance directory found!')
-
-    app.logger.info('writing google credentials to instance directory...')
-    with open(f'{app.instance_path}/google_credentials.json', 'w') as fh:
-        fh.write(os.getenv('GOOGLE_CREDENTIALS'))
