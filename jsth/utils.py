@@ -45,14 +45,16 @@ def load_photos_album(album_id):
 
     path = os.path.join(app.instance_path, app.config['PHOTO_GALLERY_MEDIA_FILE'])
 
-    # Return data immediately if it's already saved and hasn't expired
+    # Return cached data if it hasn't expired
     if os.path.exists(path):
         with open(path, 'r') as fh:
             data = json.load(fh)
-            if valid_media_url(data[0]['baseUrl']):
-                app.logger.debug('photo album already loaded')
-                return data
 
+        if valid_media_url(data[0]['baseUrl']):
+            app.logger.debug('photo album already loaded')
+            return data
+
+    # Authenticate client and make API request if data isn't cached
     app.logger.debug('creating photos client...')
     photos_api = build('photoslibrary', 'v1', credentials=app.google_credentials)
 
@@ -61,7 +63,7 @@ def load_photos_album(album_id):
     req = photos_api.mediaItems().search(body=body)
     data = list(paginated_results(req))
 
-    # Store album data
+    # Cache album data
     with open(path, 'w') as fh:
         json.dump(data, fh)
 
@@ -72,8 +74,8 @@ def google_auth():
     '''
     Handles authentication of the Google Photos API.
     '''
-    flow = Flow.from_client_secrets_file(
-        os.path.join(app.instance_path, app.config['GOOGLE_CREDENTIALS_FILE']),
+    flow = Flow.from_client_config(
+        json.loads(os.getenv('GOOGLE_CREDENTIALS')),
         scopes=['https://www.googleapis.com/auth/photoslibrary.readonly']
     )
 
