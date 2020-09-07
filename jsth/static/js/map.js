@@ -157,14 +157,38 @@ function loadHikedTrails() {
  * for a trailhead marker
 */
 function trailheadPopup(trail) {
-    return '<div class="container-fluid">' +
-           '    <div class="row">' +
-           '        <div class="column">' +
-           '            <p class="lead">' + trail.name + '</p>' +
-           '            <img class="shadow p-0 w-100" src="' + trail.imgSmall + '"></img>' +
-           '        </div>' +
-           '    </div>' +
-           '</div>';
+    var content = $(
+        '<div>' +
+        '  <p class="lead">' + trail.name + '</p>' +
+        '  <p>' + trail.summary + '</p>' +
+        '  <img class="shadow w-100" src="' + trail.imgSmall + '"></img>' +
+        '  <table class="table table-dark">' +
+        '    <tbody>' +
+        '    </tbody>' +
+        '  </table>' +
+        '</div>'
+    );
+
+    var properties = {
+        'Length (mi)': trail.length,
+        'Ascent (ft)': trail.ascent,
+        'Max. Altitude (ft)': trail.high,
+        'Star Rating': trail.stars,
+        'Star Votes': trail.starVotes,
+        'More info': '<a href="' + trail.url + '" target="_blank">The Hiking Project</a>'
+    };
+
+    for (const prop in properties) {
+        var row = $(
+            '<tr>' +
+            '   <td>' + prop + '</td>' +
+            '   <td>' + properties[prop] + '</td>' +
+            '</tr'
+        );
+        content.find('tbody').append(row);
+    }
+
+    return content.html();
 }
 
 /*
@@ -204,7 +228,9 @@ function loadTrailheads() {
                         fillOpacity: difficultyOpacities[trail.difficulty]
                     });
 
-                    marker.bindPopup(trailheadPopup(trail));
+                    marker.bindPopup(trailheadPopup(trail), {
+                        maxHeight: 0.75 * $('#map').height()
+                    });
                     // Add the marker to the trailheads feature group
                     marker.addTo(trailheads.featureGroup);
                 }

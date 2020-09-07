@@ -33,15 +33,11 @@ def load_photos_album(album_id):
 
     def valid_media_url(url):
         '''
-        Tries to request a photo URL. Returns False if the response is 403
-        (need to make photos API request again), otherwise returns True.
+        Requests a photo URL. Returns True if the response is 200.
         '''
         res = requests.get(url)
 
-        if res.status_code == 403:
-            return False
-
-        return True
+        return res.status_code == 200
 
     path = os.path.join(app.instance_path, app.config['PHOTO_GALLERY_MEDIA_FILE'])
 
@@ -50,7 +46,9 @@ def load_photos_album(album_id):
         with open(path, 'r') as fh:
             data = json.load(fh)
 
-        if valid_media_url(data[0]['baseUrl']):
+        url = data[0]['baseUrl']
+
+        if valid_media_url(url):
             app.logger.debug('photo album already loaded')
             return data
 
