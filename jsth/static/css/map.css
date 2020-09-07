@@ -13,3 +13,7 @@
 .leaflet-popup-close-button {
     color: gainsboro;
 }
+
+.leaflet-popup-content.leaflet-popup-scrolled {
+    border: 0;
+}
