@@ -81,7 +81,6 @@ def google_auth():
 
     authorization_url, state = flow.authorization_url(
         access_type='offline',
-        approval_prompt='force',
         include_granted_scopes='true'
     )
 
